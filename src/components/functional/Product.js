@@ -54,7 +54,7 @@ export const Product = ({
             </div>
           </ContainerLayoutRow>
           <div className={styles.producProps}>
-            &euro; {getAvaragePrice(product.offerData.offers)}
+            &euro;{getAvaragePrice(product.offerData.offers)}
           </div>
           <div className={styles.producProps}>&euro;{getLowestPrice(product.offerData.offers)}</div>
           <div className={styles.producProps}>

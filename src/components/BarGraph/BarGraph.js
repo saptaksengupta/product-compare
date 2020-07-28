@@ -84,14 +84,16 @@ const BarGraph = ({ label, elements, color }) => {
   const [xAxisLabels, setXAxisLabels] = useState([]);
   const [lowerBound, setLowerBound] = useState(0);
   const [upperBound, setUpperBound] = useState(lowerBound + 50);
+  const [steps, setSteps] = useState(10);
 
   useEffect(() => {
     const lb = getLowerBoundFromInputs(elements);
     setLowerBound(lb);
     const steps = getStepBasedOnElements(lb);
+    setSteps(steps);
     setUpperBound(lb + 5 * steps);
     setXAxisLabelUnits(lb, steps);
-  }, [elements]);
+  }, [elements, steps]);
 
   const getStepBasedOnElements = (lowerBound) => {
     const maxElement = Math.max.apply(null, elements);
