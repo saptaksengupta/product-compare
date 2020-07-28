@@ -15,7 +15,6 @@ const SidebarContainer = styled(ContainerLayoutColumn)`
   border-color: ${styleConfig.defaultBirderColor};
   min-height: 100%;
   justify-content: flex-start;
-  padding: 0 0.5em;
 `;
 
 const SidebarHeader = styled(ContainerLayoutRow)`
@@ -49,6 +48,7 @@ const ListItem = styled.li`
   padding: 1em;
   align-items:center;
   border-radius: 8px;
+  margin: 0 0.5em;
   &:hover{
     background: #F6F6FF;
     color: ${styleConfig.primaryColor};
