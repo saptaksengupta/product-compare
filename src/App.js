@@ -1,36 +1,43 @@
-import React, { useState } from "react";
+import React, { Suspense, lazy } from "react";
 import "./App.css";
 import { Route, Switch, Router } from "react-router-dom";
 import history from "./shared/history";
 
 import styles from "./styles/homepage.module.css";
 
-import Navbar from "./components/container/Navbar";
-import Sidebar from "./components/container/Sidebar";
-import HomePage from "./pages/HomePage";
-import CartPage from "./pages/CartPage";
-
 import CartContextProvider from "./context/CartContext";
 import indexedDbService from "./database/IndexedDatabse";
-function App() {
 
+const Navbar = lazy(() => import("./components/container/Navbar"));
+const Sidebar = lazy(() => import("./components/container/Sidebar"));
+
+const HomePage = lazy(() => import("./pages/HomePage"));
+const CartPage = lazy(() => import("./pages/CartPage"));
+
+function App() {
   indexedDbService.initDatabase();
 
   return (
-    <React.Fragment>
-      <Router history={history}>
+      <React.Fragment>
+        <Router history={history}>
           <div className="App">
             <div className={styles.main}>
               <div className={styles.sidebar}>
-                <Sidebar />
+                <Suspense fallback={<div>Loadig Sidebar...</div>}>
+                  <Sidebar />
+                </Suspense>
               </div>
               <CartContextProvider>
                 <div className="mainContainer">
-                  <Navbar />
+                  <Suspense fallback={<div>Loadig Navbar...</div>}>
+                    <Navbar />
+                  </Suspense>
                   <div className="mainBody">
                     <Switch>
-                      <Route exact path="/" component={HomePage} />
-                      <Route exact path="/cart" component={CartPage} />
+                      <Suspense fallback={<div>Loading Content...</div>}>
+                        <Route exact path="/" component={HomePage} />
+                        <Route exact path="/cart" component={CartPage} />
+                      </Suspense>
                     </Switch>
                   </div>
                 </div>
@@ -38,7 +45,7 @@ function App() {
             </div>
           </div>
         </Router>
-    </React.Fragment>
+      </React.Fragment>
   );
 }
 
