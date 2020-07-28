@@ -1,0 +1,33 @@
+.main {
+    display: flex;
+}
+
+.sidebar{
+    width: 15%;
+}
+
+.mainBody {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: flex-start;
+    padding: 3em 3em;
+    min-height: 100%;
+}
+
+.searchbarHeading {
+    font-size: 1.5em;
+    font-weight: 300;
+    display: flex;
+}
+
+.searchForm {
+    margin-top: 1em;
+    display: flex;
+}
+
+.searchBtn {
+    min-width: 155px;
+    margin-left: 3em;
+    font-size: 14px!important;
+}

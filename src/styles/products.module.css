@@ -1,0 +1,52 @@
+.productsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* margin-top: 3em; */
+}
+
+.productsHeading {
+  font-weight: 700;
+  font-size: 1.3em;
+  margin-bottom: 1em;
+}
+
+.productCard {
+  min-width: 100%;
+  margin: 0.5em 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.productImageLabel{
+  margin: 0 1em 0 0; 
+}
+
+.productImageLabel img {
+  height: 48px;
+}
+
+.productActionBtn {
+  width: 120px;
+  height: 32px;
+  font-weight: 500;
+  font-size: 12px!important;
+}
+.producProps {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: #37474f;
+}
+.producEan {
+  font-size: 14px;
+  line-height: 17px;
+  color: #90a4ae;
+  margin-top: 1em;
+}

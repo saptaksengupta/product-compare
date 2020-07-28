@@ -1,25 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import { Route, Switch, Router } from "react-router-dom";
+import history from "./shared/history";
 
+import styles from "./styles/homepage.module.css";
+
+import Navbar from "./components/container/Navbar";
+import Sidebar from "./components/container/Sidebar";
+import HomePage from "./pages/HomePage";
+import CartPage from "./pages/CartPage";
+
+import CartContextProvider from "./context/CartContext";
+import indexedDbService from "./database/IndexedDatabse";
 function App() {
+
+  indexedDbService.initDatabase();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Router history={history}>
+          <div className="App">
+            <div className={styles.main}>
+              <div className={styles.sidebar}>
+                <Sidebar />
+              </div>
+              <CartContextProvider>
+                <div className="mainContainer">
+                  <Navbar />
+                  <div className="mainBody">
+                    <Switch>
+                      <Route exact path="/" component={HomePage} />
+                      <Route exact path="/cart" component={CartPage} />
+                    </Switch>
+                  </div>
+                </div>
+              </CartContextProvider>
+            </div>
+          </div>
+        </Router>
+    </React.Fragment>
   );
 }
 
