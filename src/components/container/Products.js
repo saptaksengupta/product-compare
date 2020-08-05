@@ -30,6 +30,7 @@ const Products = ({ allProducts, onProdRemoved }) => {
       showRemoveBtn={isInTheCart(product.id)}
       onAddToCart={(productId) => addItemToCart(productId)}
       onRemoveFromCart={(productId) => removeItemFromCart(productId)}
+      key={product.id}
     />
   ));
 

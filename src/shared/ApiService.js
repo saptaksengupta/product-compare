@@ -1,18 +1,17 @@
-import { API_KEY, getBaseUrl, getRestHeaders } from "./config";
-import axios from "axios";
+import { API_KEY, getBaseUrl } from "./config";
 
 const getSearchUrl = (query) => {
-  return `${getBaseUrl()}search?apiKey=${API_KEY}&pids=5&q=${query}&format=json`;
-};
-
-const getMockProducts = () => {
-  return `http://localhost:3000/mockApi/products.json`;
+  return `${getBaseUrl()}search?apikey=${API_KEY}&pids=5&q=${query}&format=json`;
 };
 
 const searchProducts = (params) => {
   const { query } = params;
 
-  return fetch(getMockProducts()).then(resp => resp.json());
+  return fetch(getSearchUrl(query)).then((resp) => resp.json()).then((data) => {
+    if (data.products) {
+      return data.products;
+    }
+  });
 };
 
 const apiService = { getProducts: searchProducts };

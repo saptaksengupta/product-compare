@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { ContainerLayoutRow } from "../styled/CommonUtils";
 import { useHistory } from "react-router-dom";
 import { CartIcon, NotificationIcon, MenuIcon } from "../styled/Icons";
