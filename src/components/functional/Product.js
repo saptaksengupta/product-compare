@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../styles/products.module.css";
+import styles from "../../styles/products.module.scss";
 
 import { DefaultCard } from "../styled/cards";
 import { DefaultContainerLayoutGrid, ContainerLayoutRow } from "../styled/CommonUtils";

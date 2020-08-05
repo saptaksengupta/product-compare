@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
-import styles from "../../styles/cartpage.module.css";
+import styles from "../../styles/cartpage.module.scss";
 import { CartContext } from "../../context/CartContext";
 import {
   CART_ACTIONS,

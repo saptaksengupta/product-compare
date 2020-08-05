@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/cartpage.module.css";
+import styles from "../styles/cartpage.module.scss";
 
 import { ContainerLayoutColumn } from "../components/styled/CommonUtils";
 import { CartProducts } from "../components/container/CartProducts";

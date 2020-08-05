@@ -15,6 +15,7 @@ export const DefaultContainerLayoutGrid = styled.div`
     display: grid;
     grid-template-columns: 4fr 1.5fr 1.5fr 1.5fr 1.5fr 1fr;
     grid-column-gap: 0.5em;
+    align-items: center;
 `;
 
 export const ContainerLayoutRow = styled(DefaultContainerLayoutFlex)`

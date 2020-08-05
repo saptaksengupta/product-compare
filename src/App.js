@@ -1,9 +1,9 @@
 import React, { Suspense, lazy } from "react";
-import "./App.css";
+import "./App.scss";
 import { Route, Switch, Router } from "react-router-dom";
 import history from "./shared/history";
 
-import styles from "./styles/homepage.module.css";
+import styles from "./styles/homepage.module.scss";
 
 import CartContextProvider from "./context/CartContext";
 import indexedDbService from "./database/IndexedDatabse";

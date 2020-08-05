@@ -3,9 +3,7 @@ import DbConfig from "./DbConfig";
 class IndexedDatabase {
   static instance = null;
   static db = null;
-  static count = 0;
   constructor() {
-    this.count = 1;
     this.instance = this;
   }
 
@@ -49,11 +47,6 @@ class IndexedDatabase {
     const transaction = this.db.transaction([storeName], "readwrite");
     const objStore = transaction.objectStore(storeName);
     return objStore.delete(productId);
-  }
-
-  getCount() {
-    this.count += 1;
-    console.log(this.count);
   }
 }
 

@@ -4,7 +4,7 @@ import { Product } from "../functional/Product";
 
 import { CartContext } from "../../context/CartContext";
 import { CART_ACTIONS, addProductToCartDatabase } from "../../reducers/CartReducer";
-import styles from "../../styles/products.module.css";
+import styles from "../../styles/products.module.scss";
 
 import { DefaultContainerLayoutGrid } from "../styled/CommonUtils";
 
@@ -45,7 +45,7 @@ const Products = ({ allProducts, onProdRemoved }) => {
         console.log(event.target.error);
       }
     } else {
-      alert("not allowed to add.")
+      alert("Not allowed to add more than 10 products.")
     }
 
   };

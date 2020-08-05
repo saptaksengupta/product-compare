@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import styles from "../../styles/homepage.module.css";
+import styles from "../../styles/homepage.module.scss";
 
 import { StyledInput, StyledIputContainer } from "../styled/input";
 import { DefaultButton } from "../styled/Buttons";

@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import styles from "../../styles/sidebar.module.css";
+import styles from "../../styles/sidebar.module.scss";
 import { styleConfig } from "../styled/config";
 import styled from "styled-components";
 

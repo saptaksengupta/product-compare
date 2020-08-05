@@ -39,10 +39,9 @@
   flex: 1 1;
   align-items: flex-start;
   padding: 1em 2em;
-}
-
-.mainBody {
-  width: 100%;
+  .mainBody {
+    width: 100%;
+  }
 }
 
 @keyframes App-logo-spin {
